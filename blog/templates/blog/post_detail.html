@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{% static 'blog/css/blog-post.css' %}" media="screen">
+    <script src="https://kit.fontawesome.com/0ee88ae914.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -69,6 +70,24 @@
 
                 <!-- Post Content -->
                 <p>{{ post.content }}</p>
+
+                {% if post.file_upload %}
+                    <a href="{{ post.file_upload.url }}" class="btn btn-outline-dark" role="button">
+                        Download:
+
+                        {% if post.get_file_ext == 'csv' %}
+                            <i class="fas fa-file-csv"></i>
+                        {% elif post.get_file_ext == 'xlsx' or post.get_file_ext == 'xls' %}
+                            <i class="fas fa-file-excel"></i>
+                        {% elif post.get_file_ext == 'docx' or post.get_file_ext == 'doc' %}
+                            <i class="fas fa-file-word"></i>
+                        {% else %}
+                            <i class="far fa-file"></i>
+                        {% endif %}
+
+                        {{ post.get_file_name }}
+                    </a>
+                {% endif %}
                 <hr>
 
                 <!-- Comments Form -->
@@ -173,24 +192,21 @@
                         You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
                     </div>
                 </div>
-
-      </div>
-
-    </div>
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+            </div>
+        </div>
+        <!-- /.row -->
     </div>
     <!-- /.container -->
-  </footer>
 
-  <!-- Bootstrap core JavaScript -->
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+        </div>
+    <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -200,8 +216,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-
-
 </body>
-
 </html>
