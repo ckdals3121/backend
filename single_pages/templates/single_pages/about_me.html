@@ -1,18 +1,110 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>개발자 달타냥입니다!</title>
-</head>
-<body>
-    <nav>
-        <a href="/blog/">Blog</a>
-        <a href="/about_me/">About me</a>
-    </nav>
+    <head>
+        <meta charset="UTF-8">
+        <title> About 오창민 </title>
 
-    <h1>안녕하세요. 달타냥입니다.</h1>
-    <h2>이력</h2>
-    <h2>Portfolio</h2>
-    <h3>아직 공사중입니다. </h3>
-</body>
+        <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+        <link rel="stylesheet" href="{% static 'single_pages/css/about_me.css' %}" media="screen">
+        <script src="https://kit.fontawesome.com/726bbd6862.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+    {% include 'blog/navbar.html' %}
+
+    <section>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>안녕하세요. 오창민입니다.</h1>
+                    <br/>
+                    <p class="lead">
+                        야구와 컴퓨터와 게임을 좋아합니다.<br/>
+                        성균관대학교 소프트웨어학과 21학번으로 재학중이며, 저에게 맞는 분야를 찾기 위해 공부중입니다.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="{% static 'single_pages/images/my_back.png' %}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light margin-for-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>PORTFOLIO</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="car" data-toggle="modal" data-target="#ex1">
+                        <img class="card-img-top" src="{% static 'single_pages/images/ex1.jpeg' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">추가 예정</h5>
+                            <p>추가 예정</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="car" data-toggle="modal" data-target="#ex2">
+                        <img class="card-img-top" src="{% static 'single_pages/images/ex2.jpeg' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">추가 예정</h5>
+                            <p>추가 예정</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="car" data-toggle="modal" data-target="#ex3">
+                        <img class="card-img-top" src="{% static 'single_pages/images/ex3.jpeg' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">추가 예정</h5>
+                            <p>추가 예정</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed-bottom">
+        {% include 'blog/footer.html' %}
+    </div>
+
+    <!--Modal -->
+    <div class="modal fade" id="ex1" tabindex="-1" role="dialog" aria-labelledby="ex1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <p>추가 예정</p>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ex2" tabindex="-1" role="dialog" aria-labelledby="ex1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <p>추가 예정</p>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ex3" tabindex="-1" role="dialog" aria-labelledby="ex1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <p>추가 예정</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+
+    </body>
 </html>
