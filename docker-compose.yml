@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./:/usr/src/app/
     ports:
@@ -20,5 +20,5 @@ services:
       - POSTGRES_USER=do_it_django_db_user
       - POSTGRES_PASSWORD=do_it_django_db_password
       - POSTGRES_DB=do_it_django_dev
-  volumes:
-    postgres_data:
+volumes:
+  postgres_data:
