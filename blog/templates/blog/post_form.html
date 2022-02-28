@@ -4,7 +4,7 @@
 
 {% block main_area %}
     <h1>Create New Post</h1>
-    <hr />
+    <hr/>
     <form method="post" enctype="multipart/form-data">{% csrf_token %}
         {{ form | crispy }}
         <div id="div_id_tags_str">
@@ -12,6 +12,7 @@
             <input type="text" name="tags_str" id="id_tags_str" class="textinput textInput form-control">
         </div>
         <br/>
+
         <button type="submit" class="btn btn-primary float-right">Submit</button>
     </form>
     {{ form.media }}
